@@ -328,22 +328,26 @@ class Parser {
         let curr_lap = laps[i];
         let curr_track = curr_lap['Track'];
         let curr_tkpts = curr_track['Trackpoint'];
-        let curr_tkpt_length = curr_tkpts.length;
-        for (var t = 0; t < curr_tkpt_length; t++) {
-          tkpt_seq++;
-          let tkpt_data = curr_tkpts[t];
-          this.activity.addTrackpoint(new Trackpoint(tkpt_data, tkpt_seq));
+        if (curr_tkpts) {
+          let curr_tkpt_length = curr_tkpts.length;
+          for (var t = 0; t < curr_tkpt_length; t++) {
+            tkpt_seq++;
+            let tkpt_data = curr_tkpts[t];
+            this.activity.addTrackpoint(new Trackpoint(tkpt_data, tkpt_seq));
+          }
         }
       }
     } else {
       let curr_lap = lapObj;
       let curr_track = curr_lap['Track'];
       let curr_tkpts = curr_track['Trackpoint'];
-      let curr_tkpt_length = curr_tkpts.length;
-      for (var t = 0; t < curr_tkpt_length; t++) {
-        tkpt_seq++;
-        let tkpt_data = curr_tkpts[t];
-        this.activity.addTrackpoint(new Trackpoint(tkpt_data, tkpt_seq));
+      if (curr_tkpts) {
+        let curr_tkpt_length = curr_tkpts.length;
+        for (var t = 0; t < curr_tkpt_length; t++) {
+          tkpt_seq++;
+          let tkpt_data = curr_tkpts[t];
+          this.activity.addTrackpoint(new Trackpoint(tkpt_data, tkpt_seq));
+        }
       }
     }
     let startingEpoch = this.activity.startingEpoch;
