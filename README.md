@@ -10,19 +10,21 @@ A Node.js library for parsing TCX/XML files, such as from a Garmin GPS device.
 
 This library was rewritten in **TypeScript** in July 2019, replacing the previous CoffeeScript implementation.
 
-Several attributes were added to the parsed Trackpoints, such as location in GeoJSON format, and 
-a doctype attribute.  These attributes can be useful in Azure CosmosDB.
+Several attributes were added to the parsed Trackpoints, such as location in GeoJSON format, and
+a doctype attribute. These attributes can be useful in Azure CosmosDB.
 
 ### Examples
 
 #### Setup
 
 Add tcx-js to your project or package.json file:
+
 ```
 npm install tcx-js
 ```
 
 Require tcx-js in your code:
+
 ```
 tcx = require("tcx-js")
 ```
@@ -39,6 +41,7 @@ var parser = new tcx.Parser(infile);
 ```
 
 Get the parsed data:
+
 ```
 var activity = parser.activity;
 var sport = activity.sport;
@@ -184,9 +187,9 @@ node dist/example.js data/activity_twin_cities_marathon.tcx data/activity_twin_c
 
 ### Release History
 
-* 2019-07-29, version 1.0.1, Added Activity.sport and Activity.activityId
-* 2019-07-26, version 1.0.0, Library rewritten in TypeScript.
-* 2014-11-09, version 0.1.2, Added optional calculated Trackpoint fields 'elapsed_sec' and 'elapsed_hhmmss'.
-* 2014-11-09, version 0.1.1, Added optional calculated Trackpoint fields 'alt_feet' and 'dist_miles'.
-* 2014-11-09, version 0.1.0, Initial working version, implemented in CoffeeScript.
-* 2014-11-09, version 0.0.1, Alpha 1
+- 2019-07-29, version 1.0.1, Added Activity.sport and Activity.activityId
+- 2019-07-26, version 1.0.0, Library rewritten in TypeScript.
+- 2014-11-09, version 0.1.2, Added optional calculated Trackpoint fields 'elapsed_sec' and 'elapsed_hhmmss'.
+- 2014-11-09, version 0.1.1, Added optional calculated Trackpoint fields 'alt_feet' and 'dist_miles'.
+- 2014-11-09, version 0.1.0, Initial working version, implemented in CoffeeScript.
+- 2014-11-09, version 0.0.1, Alpha 1
