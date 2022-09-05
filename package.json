@@ -1,0 +1,42 @@
+{
+  "name": "tcx-js",
+  "version": "1.0.1",
+  "description": "A Node.js library for parsing TCX/XML files, such as from a Garmin GPS device.",
+  "homepage": "https://github.com/cjoakim/tcx-js",
+  "main": "dist/tcx.js",
+  "types": "dist/tcx.d.ts",
+  "files": [
+    "dist/tcx*"
+  ],
+  "scripts": {
+    "test": "npx mocha --reporter mocha-multi-reporters --reporter-options configFile=mocha.opts"
+  },
+  "author": "Chris Joakim",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjoakim/tcx-js"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.6.8",
+    "@types/xml2js": "^0.4.4",
+    "chai": "^4.2.0",
+    "chai-almost": "^1.0.1",
+    "mocha": "^6.2.0",
+    "mocha-junit-reporter": "^1.23.1",
+    "mocha-multi-reporters": "^1.1.7",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.2"
+  },
+  "keywords": [
+    "tcx",
+    "garmin",
+    "forerunner",
+    "gps"
+  ]
+}
