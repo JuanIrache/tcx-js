@@ -1,5 +1,7 @@
 ## tcx-js
 
+Clone of https://www.npmjs.com/package/tcx-js with some bug fixes
+
 ### Purpose
 
 A Node.js library for parsing TCX/XML files, such as from a Garmin GPS device.
