@@ -153,17 +153,22 @@ class Trackpoint {
       try {
         let ext = raw_obj['Extensions'];
         let ext_keys = Object.keys(ext);
-        if (ext_keys.includes('TPX')) {
-          let tpx = ext['TPX'];
-          let tpx_keys = Object.keys(tpx);
-          if (tpx_keys.includes('Speed')) {
-            this.speed = Number(tpx['Speed']);
-          }
-          if (tpx_keys.includes('RunCadence')) {
-            this.cadence = Number(tpx['RunCadence']);
-          }
-          if (tpx_keys.includes('Watts')) {
-            this.watts = Number(tpx['Watts']);
+        for (const prefix of ['', 'ns3:']) {
+          if (ext_keys.includes(prefix + 'TPX')) {
+            let tpx = ext[prefix + 'TPX'];
+            let tpx_keys = Object.keys(tpx);
+            if (this.speed == null && tpx_keys.includes(prefix + 'Speed')) {
+              this.speed = Number(tpx[prefix + 'Speed']);
+            }
+            if (
+              this.cadence == null &&
+              tpx_keys.includes(prefix + 'RunCadence')
+            ) {
+              this.cadence = Number(tpx[prefix + 'RunCadence']);
+            }
+            if (this.watts == null && tpx_keys.includes(prefix + 'Watts')) {
+              this.watts = Number(tpx[prefix + 'Watts']);
+            }
           }
         }
       } catch (e) {
