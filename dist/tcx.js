@@ -332,6 +332,7 @@ class Parser {
       for (var i = 0; i < lap_count; i++) {
         let curr_lap = laps[i];
         let curr_track = curr_lap['Track'];
+        if (Array.isArray(curr_track)) curr_track = curr_track[0];
         let curr_tkpts = curr_track['Trackpoint'];
         if (curr_tkpts) {
           let curr_tkpt_length = curr_tkpts.length;
@@ -345,6 +346,7 @@ class Parser {
     } else {
       let curr_lap = lapObj;
       let curr_track = curr_lap['Track'];
+      if (Array.isArray(curr_track)) curr_track = curr_track[0];
       let curr_tkpts = curr_track['Trackpoint'];
       if (curr_tkpts) {
         let curr_tkpt_length = curr_tkpts.length;
